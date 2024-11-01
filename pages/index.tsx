@@ -1,46 +1,37 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import Footer from './components/Footer';
+import Card from './components/Card';
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-white">
       <Head>
         <title>Secrete santa picker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Secrete santa picker🎅</h1>
+      <main className="flex flex-col items-center justify-center w-full flex-1 text-center">
+        <h1 className="text-5xl font-bold mb-8">
+          Secrete santa picker
+          <span role="img" aria-label="Santa">
+            🎅
+          </span>
+        </h1>
 
-        <div>
-          <Link href="/picker">
-            <h3>Pick &rarr;</h3>
-            <p>
-              Ready to pick your next secrete santa pairings?🌟 <br />
-              <i>Click here</i>
-            </p>
-          </Link>
-
-          <Link href="/picks">
-            <h3>See &rarr;</h3>
-            <p>
-              Forgot who you picked? 😬
-              <br />
-              <i>Click here</i>
-            </p>
-          </Link>
+        <div className="flex space-x-8 justify-center">
+          <Card
+            link="/picker"
+            title="Pick"
+            description="Ready to pick your next secrete santa pairings? 🌟"
+          />
+          <Card
+            link="/picks"
+            title="See"
+            description="Forgot who you picked? 😬"
+          />
         </div>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/vercel.svg" alt="Vercel" />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
