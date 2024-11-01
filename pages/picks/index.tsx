@@ -6,8 +6,15 @@ import Button from '../components/Button';
 import React from 'react';
 
 export default function Picks() {
-  const names = ['Person A', 'Person B', 'Person C', 'Person D', 'Person E'];
+  let names = JSON.parse(sessionStorage.getItem('matches'));
   const [reveal, setReveal] = useState(false);
+  const [selectedName, setSelectedName] = useState('');
+  const [correspondingPair, setCorrespondingPair] = useState('');
+
+  const handleClick = (giver, reciever) => {
+    setSelectedName(giver);
+    setCorrespondingPair(reciever);
+  };
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
@@ -17,16 +24,16 @@ export default function Picks() {
           Here you can see who you have picked
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          {names.map((name, ind) => (
+          {names.map((pair, ind) => (
             <Button
               key={ind}
-              text={name}
-              clickFunction={() => setReveal(!reveal)}
+              text={pair.name}
+              clickFunction={() => handleClick(pair.name, pair.secretSanta)}
             />
           ))}
         </div>
         {reveal ? (
-          <RevealCard giver={'Person 1'} reciever={'Person 2'} />
+          <RevealCard giver={selectedName} reciever={correspondingPair} />
         ) : null}
       </div>
       <Footer />

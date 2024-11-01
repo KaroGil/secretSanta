@@ -1,6 +1,5 @@
 export const matchSecretSanta = (names) => {
-  if (names.length < 2)
-    throw new Error('Need at least two people for Secret Santa!');
+  if (names.length < 2) return [];
 
   // Matching algorithm from chatGPT
   // Initialize an array of indices representing the positions in the names array
@@ -31,8 +30,6 @@ export const matchSecretSanta = (names) => {
       secretSanta: names[shuffledIndices[i]],
     });
   }
-
-  console.log(pairs);
 
   return pairs;
 };

@@ -10,6 +10,9 @@ export default function Picker() {
   const [names, setNames] = useState([]);
   const [pairs, setPairs] = useState([]);
   const [pick, setPick] = useState(true);
+
+  sessionStorage.setItem('matches', JSON.stringify(pairs));
+
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
@@ -23,18 +26,27 @@ export default function Picker() {
             setPick={setPick}
           />
         ) : (
-          <div className="flex flex-wrap justify-center gap-4">
-            {pairs.map((pair, ind) => (
-              <RevealCard
-                key={ind}
-                giver={pair.name}
-                reciever={pair.secretSanta}
+          <div>
+            <div className="flex flex-wrap justify-center gap-4">
+              {pairs.length === 0 ? (
+                <p className="text-gray-600 mb-8">
+                  You have to enter multiple people for a match
+                </p>
+              ) : null}
+              {pairs.map((pair, ind) => (
+                <RevealCard
+                  key={ind}
+                  giver={pair.name}
+                  reciever={pair.secretSanta}
+                />
+              ))}
+            </div>
+            <div className="flex justify-center mt-8">
+              <Button
+                text={'Back to namelist'}
+                clickFunction={() => setPick(true)}
               />
-            ))}
-            <Button
-              text={'Back to namelist'}
-              clickFunction={() => setPick(true)}
-            />
+            </div>
           </div>
         )}
       </div>

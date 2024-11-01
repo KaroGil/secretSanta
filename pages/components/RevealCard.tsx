@@ -13,7 +13,7 @@ export default function RevealCard({
 
   const reveal = () => {
     setRevealed(true);
-    setDelay(10);
+    setDelay(5);
 
     const timer = setInterval(() => {
       setDelay((prev) => {
