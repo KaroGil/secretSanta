@@ -25,13 +25,7 @@ export default function RevealCard({ giver, reciever }) {
       <div>
         <h1>RevealCard - {giver}</h1>
         {reavealed ? (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
+          <div>
             <p>Here is your secrete santa</p>
             <p>{reciever} </p>
             <p>Time remaining: {delay} seconds</p>

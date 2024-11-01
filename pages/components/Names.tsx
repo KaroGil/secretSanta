@@ -26,24 +26,9 @@ export default function Names({
       <div>
         <p>Here you can pick your secrete santa</p>
         <NameForm names={names} setNames={setNames} />
-        <ul
-          style={{
-            listStyleType: 'none',
-            padding: '10px',
-          }}
-        >
+        <ul>
           {names.map((name, ind) => (
-            <li
-              style={{
-                padding: '10px',
-                border: '1px solid #eaeaea',
-                margin: '5px',
-                borderRadius: '8px',
-                display: 'flex',
-                justifyContent: 'space-between',
-              }}
-              key={ind}
-            >
+            <li key={ind}>
               <span>{name}</span>
               <button onClick={() => remove(ind)}>&reg;</button>
             </li>
