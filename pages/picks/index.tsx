@@ -1,7 +1,5 @@
 import Nav from '../components/Nav';
-import styles from '../../styles/Home.module.css';
 import Footer from '../components/Footer';
-import style from '../../styles/NameForm.module.css';
 import RevealCard from '../components/RevealCard';
 import { useState } from 'react';
 
@@ -11,17 +9,12 @@ export default function Picks() {
   return (
     <div>
       <Nav />
-      <div className={styles.container}>
+      <div>
         <h1>Picks</h1>
         <div>
           <p>Here you can see who you have picked</p>
           {names.map((name, ind) => (
-            <button
-              onClick={() => setReveal(!reveal)}
-              className={style.submitButton}
-            >
-              {name}
-            </button>
+            <button onClick={() => setReveal(!reveal)}>{name}</button>
           ))}
           {reveal ? (
             <RevealCard giver={'Person 1'} reciever={'Person 2'} />

@@ -1,5 +1,4 @@
 import Nav from '../components/Nav';
-import styles from '../../styles/Home.module.css';
 import Footer from '../components/Footer';
 import { useState } from 'react';
 import RevealCard from '../components/RevealCard';
@@ -12,7 +11,7 @@ export default function Picker() {
   return (
     <div>
       <Nav />
-      <div className={styles.container}>
+      <div>
         <h1>Picker</h1>
         {pick ? (
           <Names

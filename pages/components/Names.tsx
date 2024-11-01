@@ -1,4 +1,3 @@
-import style from '../../styles/NameForm.module.css';
 import NameForm from './NameForm';
 import { matchSecretSanta } from '../utils/Match';
 
@@ -51,12 +50,8 @@ export default function Names({
           ))}
         </ul>
       </div>
-      <button className={style.submitButton} onClick={() => submit()}>
-        Pick
-      </button>
-      <button className={style.submitButton} onClick={() => setNames([])}>
-        Reset
-      </button>
+      <button onClick={() => submit()}>Pick</button>
+      <button onClick={() => setNames([])}>Reset</button>
     </div>
   );
 }

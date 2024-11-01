@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styles from '../../styles/NameForm.module.css';
 
 export default function RevealCard({ giver, reciever }) {
   const [reavealed, setRevealed] = useState(false);
@@ -35,14 +34,12 @@ export default function RevealCard({ giver, reciever }) {
           >
             <p>Here is your secrete santa</p>
             <p>{reciever} </p>
-            <p className={styles.timer}>Time remaining: {delay} seconds</p>
+            <p>Time remaining: {delay} seconds</p>
           </div>
         ) : (
           <div>
             <p>Here you can reveal your secrete santa</p>
-            <button onClick={reveal} className={styles.submitButton}>
-              Reveal
-            </button>
+            <button onClick={reveal}>Reveal</button>
           </div>
         )}
       </div>

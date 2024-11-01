@@ -1,5 +1,3 @@
-import styles from '../../styles/NameForm.module.css';
-
 export default function NameForm({ names, setNames }) {
   const onSubmit = (event) => {
     event.preventDefault();
@@ -8,12 +6,12 @@ export default function NameForm({ names, setNames }) {
   };
 
   return (
-    <form onSubmit={onSubmit} className={styles.formContainer}>
-      <label className={styles.label}>
+    <form onSubmit={onSubmit}>
+      <label>
         Name:
-        <input type="text" name="name" className={styles.input} required />
+        <input type="text" name="name" required />
       </label>
-      <input type="submit" value="Add" className={styles.submitButton} />
+      <input type="submit" value="Add" />
     </form>
   );
 }
