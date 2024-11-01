@@ -1,6 +1,15 @@
 import Link from 'next/link';
+import React from 'react';
 
-export default function ({ link, title, description }) {
+export default function Card({
+  link,
+  title,
+  description,
+}: {
+  link: string;
+  title: string;
+  description: string;
+}) {
   return (
     <Link
       href={link}

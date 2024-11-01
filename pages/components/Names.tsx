@@ -1,3 +1,4 @@
+import React from 'react';
 import NameForm from './NameForm';
 import { matchSecretSanta } from '../utils/Match';
 import Button from './Button';

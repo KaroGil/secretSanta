@@ -4,6 +4,7 @@ import { useState } from 'react';
 import RevealCard from '../components/RevealCard';
 import Names from '../components/Names';
 import Button from '../components/Button';
+import React from 'react';
 
 export default function Picker() {
   const [names, setNames] = useState([]);

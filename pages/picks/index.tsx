@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import RevealCard from '../components/RevealCard';
 import { useState } from 'react';
 import Button from '../components/Button';
+import React from 'react';
 
 export default function Picks() {
   const names = ['Person A', 'Person B', 'Person C', 'Person D', 'Person E'];

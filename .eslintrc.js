@@ -1,10 +1,25 @@
+// .eslintrc.js
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
   extends: [
-    'next/core-web-vitals', // Recommended Next.js ESLint rules
     'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
   rules: {
-    // Customize any rules you want here
+    'prettier/prettier': 'error', // Enforce Prettier rules as ESLint errors
+    // Add any other custom rules here
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };

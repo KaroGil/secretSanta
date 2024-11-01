@@ -1,4 +1,12 @@
-export default function NameForm({ names, setNames }) {
+import React from 'react';
+
+export default function NameForm({
+  names,
+  setNames,
+}: {
+  names: string[];
+  setNames: (names: string[]) => void;
+}) {
   const onSubmit = (event) => {
     event.preventDefault();
     setNames([event.target.name.value, ...names]);

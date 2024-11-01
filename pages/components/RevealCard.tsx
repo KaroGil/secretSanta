@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import Button from './Button';
 
-export default function RevealCard({ giver, reciever }) {
+export default function RevealCard({
+  giver,
+  reciever,
+}: {
+  giver: string;
+  reciever: string;
+}) {
   const [reavealed, setRevealed] = useState(false);
   const [delay, setDelay] = useState(0);
 
