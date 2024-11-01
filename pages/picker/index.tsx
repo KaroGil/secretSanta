@@ -1,9 +1,9 @@
-import Nav from "../components/Nav";
-import styles from "../../styles/Home.module.css";
-import Footer from "../components/Footer";
-import { useState } from "react";
-import RevealCard from "../components/RevealCard";
-import Names from "../components/Names";
+import Nav from '../components/Nav';
+import styles from '../../styles/Home.module.css';
+import Footer from '../components/Footer';
+import { useState } from 'react';
+import RevealCard from '../components/RevealCard';
+import Names from '../components/Names';
 
 export default function Picker() {
   const [names, setNames] = useState([]);
@@ -39,8 +39,17 @@ export default function Picker() {
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            Segoe UI,
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            Fira Sans,
+            Droid Sans,
+            Helvetica Neue,
             sans-serif;
         }
         * {

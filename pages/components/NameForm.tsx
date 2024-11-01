@@ -1,10 +1,10 @@
-import styles from "../../styles/NameForm.module.css";
+import styles from '../../styles/NameForm.module.css';
 
 export default function NameForm({ names, setNames }) {
   const onSubmit = (event) => {
     event.preventDefault();
     setNames([event.target.name.value, ...names]);
-    event.target.name.value = "";
+    event.target.name.value = '';
   };
 
   return (

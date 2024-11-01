@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styles from "../../styles/NameForm.module.css";
+import React, { useState } from 'react';
+import styles from '../../styles/NameForm.module.css';
 
 export default function RevealCard({ giver, reciever }) {
   const [reavealed, setRevealed] = useState(false);
@@ -28,9 +28,9 @@ export default function RevealCard({ giver, reciever }) {
         {reavealed ? (
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
             }}
           >
             <p>Here is your secrete santa</p>

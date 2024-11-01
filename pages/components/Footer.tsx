@@ -1,4 +1,4 @@
-import styles from "../../styles/Home.module.css";
+import styles from '../../styles/Home.module.css';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by{" "}
+        Powered by{' '}
         <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
       </a>
       <style jsx>{`

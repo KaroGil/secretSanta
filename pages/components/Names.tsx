@@ -1,6 +1,6 @@
-import style from "../../styles/NameForm.module.css";
-import NameForm from "./NameForm";
-import { matchSecretSanta } from "../utils/Match";
+import style from '../../styles/NameForm.module.css';
+import NameForm from './NameForm';
+import { matchSecretSanta } from '../utils/Match';
 
 export default function Names({
   names,
@@ -29,19 +29,19 @@ export default function Names({
         <NameForm names={names} setNames={setNames} />
         <ul
           style={{
-            listStyleType: "none",
-            padding: "10px",
+            listStyleType: 'none',
+            padding: '10px',
           }}
         >
           {names.map((name, ind) => (
             <li
               style={{
-                padding: "10px",
-                border: "1px solid #eaeaea",
-                margin: "5px",
-                borderRadius: "8px",
-                display: "flex",
-                justifyContent: "space-between",
+                padding: '10px',
+                border: '1px solid #eaeaea',
+                margin: '5px',
+                borderRadius: '8px',
+                display: 'flex',
+                justifyContent: 'space-between',
               }}
               key={ind}
             >
