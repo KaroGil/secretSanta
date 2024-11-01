@@ -32,14 +32,14 @@ export default function RevealCard({
       <h1 className="text-xl font-semibold mb-4">RevealCard - {giver}</h1>
       {reavealed ? (
         <div>
-          <p className="text-gray-700 mb-2">Here is your secrete santa</p>
+          <p className="text-gray-700 mb-2">Here is your secret santa</p>
           <p className="text-blue-500 font-bold text-lg mb-2">{reciever} </p>
           <p className="text-gray-500">Time remaining: {delay} seconds</p>
         </div>
       ) : (
         <div>
           <p className="text-gray-700 mb-4">
-            Here you can reveal your secrete santa
+            Here you can reveal your secret santa
           </p>
           <Button text={'Reveal'} clickFunction={reveal} />
         </div>

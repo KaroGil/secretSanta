@@ -7,13 +7,13 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <Head>
-        <title>Secrete santa picker</title>
+        <title>Secret santa picker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 text-center">
         <h1 className="text-5xl font-bold mb-8">
-          Secrete santa picker
+          Secret santa picker
           <span role="img" aria-label="Santa">
             🎅
           </span>
