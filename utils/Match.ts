@@ -31,5 +31,9 @@ export const matchSecretSanta = (names) => {
     });
   }
 
+  if (typeof window !== 'undefined') {
+    sessionStorage.setItem('matches', JSON.stringify(pairs));
+  }
+
   return pairs;
 };

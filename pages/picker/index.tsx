@@ -10,9 +10,6 @@ export default function Picker() {
   const [names, setNames] = useState([]);
   const [pairs, setPairs] = useState([]);
   const [pick, setPick] = useState(true);
-
-  sessionStorage.setItem('matches', JSON.stringify(pairs));
-
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
