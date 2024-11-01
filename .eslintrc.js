@@ -2,6 +2,7 @@
 module.exports = {
   env: {
     node: true, // Allows Node.js global variables like `module`
+    browser: true, // Allows browser global variables like `window`
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Footer from './components/Footer';
-import Card from './components/Card';
 import React from 'react';
+import MainCard from './components/MainCard';
 
 export default function Home() {
   return (
@@ -20,12 +20,12 @@ export default function Home() {
         </h1>
 
         <div className="flex space-x-8 justify-center">
-          <Card
+          <MainCard
             link="/picker"
             title="Pick"
             description="Ready to pick your next secrete santa pairings? 🌟"
           />
-          <Card
+          <MainCard
             link="/picks"
             title="See"
             description="Forgot who you picked? 😬"
