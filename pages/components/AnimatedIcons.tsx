@@ -13,7 +13,7 @@ function createIconElement(icon: string) {
   return element;
 }
 
-export function AnimatedIcons({ n = 20 }) {
+export function AnimatedIcons({ n = 20 }: { n?: number }) {
   useEffect(() => {
     const container = document.createElement('div');
     container.classList.add('christmas-icons-container');

@@ -1,21 +1,25 @@
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import RevealCard from '../components/RevealCard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import React from 'react';
 import Link from 'next/link';
 
 export default function Picks() {
-  let names = [];
-  if (typeof window != 'undefined') {
-    names = JSON.parse(sessionStorage.getItem('matches'));
-  }
+  const [names, setNames] = useState([]);
   const [reveal, setReveal] = useState(false);
   const [selectedName, setSelectedName] = useState('');
   const [correspondingPair, setCorrespondingPair] = useState('');
 
-  const handleClick = (giver, reciever) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedNames = JSON.parse(sessionStorage.getItem('matches') || '[]');
+      setNames(storedNames);
+    }
+  }, []);
+
+  const handleClick = (giver: string, reciever: string) => {
     setSelectedName(giver);
     setCorrespondingPair(reciever);
     setReveal(true);
