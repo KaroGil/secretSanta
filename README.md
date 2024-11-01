@@ -1,4 +1,4 @@
-## Secrete santa picker
+## Secret santa picker
 
 A app for picking matches for secret santa. It takes in a list of names and gives out random matchings based on this list that will be revealed to each player in secret 🤫
 
