@@ -1,24 +1,26 @@
-import styles from "../../styles/Nav.module.css";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 export default function Nav() {
   return (
-    <nav className={styles.nav}>
-      <Link href="/" className={styles.link}>
+    <nav className="bg-white p-4 border-b border-gray-200 flex justify-center items-center">
+      <Link href="/" className="text-2xl">
         🎅
       </Link>
-      <ul className={styles.ul}>
-        <li className={styles.li}>
-          <Link href="/picker" className={styles.link}>
-            Picker
-          </Link>
-        </li>
-        <li className={styles.li}>
-          <Link href="/picks" className={styles.link}>
-            Picks
-          </Link>
-        </li>
-      </ul>
+      <div className="flex">
+        <Link
+          className="text-gray-800 font-medium text-lg px-4 py-2"
+          href="/picker"
+        >
+          Picker
+        </Link>
+        <Link
+          className="text-gray-800 font-medium text-lg px-4 py-2"
+          href="/picks"
+        >
+          Picks
+        </Link>
+      </div>
     </nav>
   );
 }

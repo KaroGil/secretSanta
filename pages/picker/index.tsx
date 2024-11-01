@@ -1,19 +1,20 @@
-import Nav from "../components/Nav";
-import styles from "../../styles/Home.module.css";
-import Footer from "../components/Footer";
-import { useState } from "react";
-import RevealCard from "../components/RevealCard";
-import Names from "../components/Names";
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import { useState } from 'react';
+import RevealCard from '../components/RevealCard';
+import Names from '../components/Names';
+import Button from '../components/Button';
+import React from 'react';
 
 export default function Picker() {
   const [names, setNames] = useState([]);
   const [pairs, setPairs] = useState([]);
   const [pick, setPick] = useState(true);
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Nav />
-      <div className={styles.container}>
-        <h1>Picker</h1>
+      <div className="flex-grow flex flex-col items-center justify-center">
+        <h1 className="text-4xl font-bold m-4">Picker</h1>
         {pick ? (
           <Names
             names={names}
@@ -22,7 +23,7 @@ export default function Picker() {
             setPick={setPick}
           />
         ) : (
-          <div>
+          <div className="flex flex-wrap justify-center gap-4">
             {pairs.map((pair, ind) => (
               <RevealCard
                 key={ind}
@@ -30,23 +31,14 @@ export default function Picker() {
                 reciever={pair.secretSanta}
               />
             ))}
+            <Button
+              text={'Back to namelist'}
+              clickFunction={() => setPick(true)}
+            />
           </div>
         )}
       </div>
       <Footer />
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   );
 }

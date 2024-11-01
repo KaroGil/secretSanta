@@ -1,7 +1,13 @@
-import React, { useState } from "react";
-import styles from "../../styles/NameForm.module.css";
+import React, { useState } from 'react';
+import Button from './Button';
 
-export default function RevealCard({ giver, reciever }) {
+export default function RevealCard({
+  giver,
+  reciever,
+}: {
+  giver: string;
+  reciever: string;
+}) {
   const [reavealed, setRevealed] = useState(false);
   const [delay, setDelay] = useState(0);
 
@@ -22,30 +28,22 @@ export default function RevealCard({ giver, reciever }) {
   };
 
   return (
-    <div>
-      <div>
-        <h1>RevealCard - {giver}</h1>
-        {reavealed ? (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <p>Here is your secrete santa</p>
-            <p>{reciever} </p>
-            <p className={styles.timer}>Time remaining: {delay} seconds</p>
-          </div>
-        ) : (
-          <div>
-            <p>Here you can reveal your secrete santa</p>
-            <button onClick={reveal} className={styles.submitButton}>
-              Reveal
-            </button>
-          </div>
-        )}
-      </div>
+    <div className="bg-white shadow-lg rounded-lg p-6 w-64 text-center m-4">
+      <h1 className="text-xl font-semibold mb-4">RevealCard - {giver}</h1>
+      {reavealed ? (
+        <div>
+          <p className="text-gray-700 mb-2">Here is your secrete santa</p>
+          <p className="text-blue-500 font-bold text-lg mb-2">{reciever} </p>
+          <p className="text-gray-500">Time remaining: {delay} seconds</p>
+        </div>
+      ) : (
+        <div>
+          <p className="text-gray-700 mb-4">
+            Here you can reveal your secrete santa
+          </p>
+          <Button text={'Reveal'} clickFunction={reveal} />
+        </div>
+      )}
     </div>
   );
 }

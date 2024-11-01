@@ -1,6 +1,7 @@
-import style from "../../styles/NameForm.module.css";
-import NameForm from "./NameForm";
-import { matchSecretSanta } from "../utils/Match";
+import React from 'react';
+import NameForm from './NameForm';
+import { matchSecretSanta } from '../../utils/Match';
+import Button from './Button';
 
 export default function Names({
   names,
@@ -23,40 +24,27 @@ export default function Names({
     setPairs(pairs);
   };
   return (
-    <div>
-      <div>
-        <p>Here you can pick your secrete santa</p>
-        <NameForm names={names} setNames={setNames} />
-        <ul
-          style={{
-            listStyleType: "none",
-            padding: "10px",
-          }}
-        >
-          {names.map((name, ind) => (
-            <li
-              style={{
-                padding: "10px",
-                border: "1px solid #eaeaea",
-                margin: "5px",
-                borderRadius: "8px",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-              key={ind}
-            >
-              <span>{name}</span>
-              <button onClick={() => remove(ind)}>&reg;</button>
+    <div className="bg-white shadow-md rounded-lg p-8 w-80 mb-8 text-center">
+      <p className="text-gray-700 mb-4">Here you can pick your secrete santa</p>
+      <NameForm names={names} setNames={setNames} />
+      <ul className="list-none p-0 mt-4">
+        {names &&
+          names.map((name, ind) => (
+            <li key={ind} className="flex justify-between items-center mb-2">
+              <span className="text-gray-800">{name}</span>
+              <button
+                onClick={() => remove(ind)}
+                className="text-red-500 hover:text-red-700"
+              >
+                &reg;
+              </button>
             </li>
           ))}
-        </ul>
+      </ul>
+      <div className="flex justify-between">
+        <Button text={'Pick'} clickFunction={() => submit()} />
+        <Button text={'Reset'} clickFunction={() => setNames([])} />
       </div>
-      <button className={style.submitButton} onClick={() => submit()}>
-        Pick
-      </button>
-      <button className={style.submitButton} onClick={() => setNames([])}>
-        Reset
-      </button>
     </div>
   );
 }
