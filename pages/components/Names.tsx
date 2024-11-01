@@ -25,7 +25,7 @@ export default function Names({
   };
   return (
     <div className="bg-white shadow-md rounded-lg p-8 w-80 mb-8 text-center">
-      <p className="text-gray-700 mb-4">Here you can pick your secrete santa</p>
+      <p className="text-gray-700 mb-4">Here you can pick your secret santa</p>
       <NameForm names={names} setNames={setNames} />
       <ul className="list-none p-0 mt-4">
         {names &&
