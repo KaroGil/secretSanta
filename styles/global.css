@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.main-content {
+  position: relative;
+  z-index: 1; /* Ensure it is above the icons */
+}
+
 /* Animations */
 .christmas-icons-container {
   position: fixed;
