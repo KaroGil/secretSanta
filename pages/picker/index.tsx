@@ -9,10 +9,10 @@ export default function Picker() {
   const [pairs, setPairs] = useState([]);
   const [pick, setPick] = useState(true);
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Nav />
-      <div>
-        <h1>Picker</h1>
+      <div className="flex-grow flex flex-col items-center justify-center">
+        <h1 className="text-4xl font-bold mb-4">Picker</h1>
         {pick ? (
           <Names
             names={names}
@@ -21,7 +21,7 @@ export default function Picker() {
             setPick={setPick}
           />
         ) : (
-          <div>
+          <div className="flex flex-wrap justify-center gap-4">
             {pairs.map((pair, ind) => (
               <RevealCard
                 key={ind}
