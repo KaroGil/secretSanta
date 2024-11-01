@@ -1,5 +1,8 @@
 // .eslintrc.js
 module.exports = {
+  env: {
+    node: true, // Allows Node.js global variables like `module`
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
