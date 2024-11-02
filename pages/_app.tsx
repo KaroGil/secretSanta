@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <AnimatedIcons n={50} />
       <div className="main-content">
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </div>
     </>
   );
