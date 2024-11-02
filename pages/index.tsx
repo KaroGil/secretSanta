@@ -19,7 +19,7 @@ export default function Home() {
           </span>
         </h1>
 
-        <div className="flex space-x-8 justify-center">
+        <div className="flex space-x-4 md:space-x-8 justify-center  w-full max-w-2xl">
           <MainCard
             link="/picker"
             title="Pick"
